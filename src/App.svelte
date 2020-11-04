@@ -8,19 +8,24 @@
   import About from './pages/About.svelte';
 
   // router
-  import {Router, Route} from 'svelte-routing';
+  import {Router, Route, Link} from 'svelte-routing';
+
+  // components
+  import Navbar from "./components/Navbar/Navbar.svelte";
+  import Sidebar from "./components/Navbar/Sidebar.svelte";
+  // import Cart from "./components/Cart/Cart.svelte";
+
+  // global store
+  import globalStore from "./stores/globalStore";
 
 </script>
 
 <Router>
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/products">Products</Link>
-  </nav>
+  <Navbar />
+  <Sidebar />
   <Route path="/" component={Home} />
-  <Route path="/about" component={Home} />
-  <Route path="/login" component={Home} />
-  <Route path="/products" component={Home} />
-  <Route path="/products/:id" component={Home} />
+  <Route path="/about" component={About} />
+  <Route path="/login" component={Login} />
+  <Route path="/products" component={Products} />
+  <Route path="/products/:id" component={ProductTemplate} />
 </Router>
