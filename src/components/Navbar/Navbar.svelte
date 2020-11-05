@@ -11,7 +11,7 @@
 <svelte:window bind:innerWidth="{screenWidth}" />
 
 {#if screenWidth > 992}
-<BigNavbar />
+  <BigNavbar />
 {:else}
-<SmallNavbar />
+  <SmallNavbar />
 {/if}

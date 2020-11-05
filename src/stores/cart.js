@@ -12,16 +12,8 @@ export const cartTotal =  derived(cart, ($cart) => {
     return (acc += curr.amount * curr.price);
   }, 0);
     return total.toFixed(2);
+    // return parseFloat(total.toFixed(2));
 });
-
-// // cart total
-// export const cartTotal = derived(cart, $cart => {
-//   let total = $cart.reduce((acc, curr) => {
-//     return (acc += curr.amount * curr.price);
-//   }, 0);
-//   return parseFloat(total.toFixed(2));
-// });
-
 
 // local functions
   // we write this code so we dont repeat this piece of code over and over again thru our code
