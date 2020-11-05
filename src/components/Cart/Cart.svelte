@@ -4,8 +4,9 @@
   import { link } from "svelte-routing";
     // item list
   import ItemsList from "./ItemsList.svelte";
-  let user = false
-  // import user from "../../stores/user";
+
+  import user from "../../stores/user";
+  // let user = false
 </script>
 
 <div class="cart-overlay" transition:blur>
@@ -13,9 +14,7 @@
     <div class="cart" transition:fade={{ delay: 400 }}>
       <!-- cart header -->
       <div class="cart-header">
-        <button
-          class="btn-close"
-          on:click={() => {
+        <button class="btn-close" on:click={() => {
             globalStore.toggleItem('cart', false);
           }}>
           <i class="fas fa-window-close" />
@@ -29,26 +28,19 @@
       <!-- end of cart items -->
       <!-- cart footer -->
       <div class="cart-footer">
-        <!-- {#if $user.jwt} -->
-        {#if user}
-            <a
-            href="/checkout"
-            use:link
-            class="btn btn-primary btn-block"
-            on:click={() => {
-              globalStore.toggleItem('cart', false);
-            }}>
+        {#if $user.jwt}
+        <!-- {#if user} -->
+          <a href="/checkout" use:link class="btn btn-primary btn-block" on:click={() => {
+            globalStore.toggleItem('cart', false);
+          }}>
             checkout
           </a>
         {:else}
           <p class="cart-login">
             in order to checkout please
-            <a
-              href="/login"
-              use:link
-              on:click={() => {
-                globalStore.toggleItem('cart', false);
-              }}>
+            <a href="/login" use:link on:click={() => {
+               globalStore.toggleItem('cart', false);
+            }}>
               login
             </a>
           </p>

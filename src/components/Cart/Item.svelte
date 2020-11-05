@@ -5,11 +5,7 @@
   export let price;
   export let amount;
   // import cart methods
-  // import {
-  //   removeItem,
-  //   increaseAmount,
-  //   decreaseAmount
-  // } from "../../stores/cart";
+  import { removeItem, increaseAmount, decreaseAmount } from "../../stores/cart";
 </script>
 
 <!-- cart item -->
@@ -18,11 +14,8 @@
   <div>
     <h4>{title}</h4>
     <h5>${price}</h5>
-    <button
-      class="cart-btn remove-btn"
-      on:click={() => {
-        // removeItem(id);
-      }}>
+    <button class="cart-btn remove-btn" on:click={() => {
+      removeItem(id); }}>
       remove
     </button>
   </div>
@@ -30,7 +23,7 @@
     <button
       class="cart-btn amount-btn"
       on:click={() => {
-        // increaseAmount(id);
+        increaseAmount(id);
       }}>
       <i class="fas fa-chevron-up" />
     </button>
@@ -38,7 +31,7 @@
     <button
       class="cart-btn amount-btn"
       on:click={() => {
-        // decreaseAmount(id, amount);
+        decreaseAmount(id, amount);
       }}>
       <i class="fas fa-chevron-down" />
     </button>
