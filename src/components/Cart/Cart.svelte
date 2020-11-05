@@ -4,7 +4,6 @@
   import { link } from "svelte-routing";
     // item list
   import ItemsList from "./ItemsList.svelte";
-
   import user from "../../stores/user";
   // let user = false
 </script>
@@ -29,18 +28,17 @@
       <!-- cart footer -->
       <div class="cart-footer">
         {#if $user.jwt}
-        <!-- {#if user} -->
           <a href="/checkout" use:link class="btn btn-primary btn-block" on:click={() => {
-            globalStore.toggleItem('cart', false);
-          }}>
+              globalStore.toggleItem('cart', false);
+            }}>
             checkout
           </a>
         {:else}
           <p class="cart-login">
             in order to checkout please
             <a href="/login" use:link on:click={() => {
-               globalStore.toggleItem('cart', false);
-            }}>
+                globalStore.toggleItem('cart', false);
+              }}>
               login
             </a>
           </p>

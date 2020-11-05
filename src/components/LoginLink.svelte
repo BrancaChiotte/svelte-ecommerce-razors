@@ -1,13 +1,13 @@
 <script>
   import user from "../stores/user";
   import { link } from "svelte-routing";
-  // import { logoutUser } from "../stores/user";
+  import { logoutUser } from "../stores/user";
   import globalStore from "../stores/globalStore";
 </script>
 
 {#if $user.jwt}
   <a href="/" class="logout-btn" on:click={() => {
-      // logoutUser();
+      logoutUser();
       globalStore.toggleItem('sidebar', false);
     }}>
     logout

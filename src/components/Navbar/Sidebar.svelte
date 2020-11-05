@@ -10,7 +10,9 @@
   <div class="sidebar" transition:fade={{ delay: 400 }}>
     <!-- header -->
     <div class="sidebar-header">
-      <button class="btn-close" on:click={() => { globalStore.toggleItem('sidebar', false);}}>
+      <button class="btn-close" on:click={() => {
+          globalStore.toggleItem('sidebar', false);
+        }}>
         <i class="fas fa-window-close" />
       </button>
     </div>
@@ -20,7 +22,9 @@
     <ul class="sidebar-links">
       {#each links as sideLink}
         <li>
-          <a href={sideLink.url} use:link on:click={() => { globalStore.toggleItem('sidebar', false); }}>
+          <a href={sideLink.url} use:link on:click={() => {
+              globalStore.toggleItem('sidebar', false);
+            }}>
             {sideLink.text}
           </a>
         </li>

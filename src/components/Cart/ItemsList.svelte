@@ -1,7 +1,7 @@
 <script>
   import Item from "./Item.svelte";
-  // import cart, { cartTotal } from "../../stores/cart";
   import cart, { cartTotal, setStorageCart } from "../../stores/cart";
+    // import cart, { cartTotal } from "../../stores/cart";
   import { fly } from "svelte/transition";
   import { flip } from "svelte/animate";
   import { afterUpdate } from "svelte";

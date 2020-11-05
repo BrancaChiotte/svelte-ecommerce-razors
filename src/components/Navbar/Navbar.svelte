@@ -8,7 +8,7 @@
   }
 </script>
 
-<svelte:window bind:innerWidth="{screenWidth}" />
+<svelte:window bind:innerWidth={screenWidth} />
 
 {#if screenWidth > 992}
   <BigNavbar />

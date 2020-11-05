@@ -22,9 +22,7 @@
       </a>
       <!-- cart toggle -->
       <div class="nav-aside">
-        <!-- login button -->
         <LoginLink />
-        <!-- cart button -->
         <CartButton />
       </div>
     </div>
