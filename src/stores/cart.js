@@ -23,8 +23,9 @@ export const cartTotal = derived(cart, $cart => {
   let total = $cart.reduce((acc, curr) => {
     return (acc += curr.amount * curr.price);
   }, 0);
-  return total.toFixed(2);
-  // return parseFloat(total.toFixed(2));
+  // return total.toFixed(2); -- this returns a string
+  // to return a number we need parseFloat
+  return parseFloat(total.toFixed(2));
 });
 
 // local functions
