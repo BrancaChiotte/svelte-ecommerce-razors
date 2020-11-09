@@ -13,7 +13,6 @@ async function setProducts() {
     store.set(products);
   }
 }
-
 // subscribe
 // set
 // update
@@ -21,8 +20,8 @@ async function setProducts() {
 // flatten products
 function flattenProducts(data) {
   return data.map(item => {
-    let image = item.image.url;
-    // let image = `${url}${item.image.url}`;
+    // let image = item.image.url;
+    let image = `${url}${item.image.url}`;
     return { ...item, image };
   });
 }

@@ -2,10 +2,13 @@
   import { onMount } from "svelte";
   import { navigate, link } from "svelte-routing";
   import user from "../stores/user";
-  import cart, { cartTotal } from "../stores/cart";
+  import { cartTotal } from "../stores/cart";
 
   let name = "";
   $: isEmpty = !name ;
+
+
+  // stripe vars
 
   onMount(() => {
     if (!$user.jwt) {
